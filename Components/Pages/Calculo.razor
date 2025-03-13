@@ -1,0 +1,34 @@
+﻿@page "/calculo"
+@rendermode InteractiveServer
+
+<EditForm Model="@formData">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="primeiroValor" class="form-label">Valor 1:</label>
+                <InputNumber id="primeiroValor" @bind-Value="formData.PrimeiroValor"></InputNumber>
+            </div>
+            <div class="mb-3">
+                <label for="segundoValor" class="form-label">Valor 2:</label>
+                <InputNumber id="segundoValor" @bind-Value="formData.SegundoValor"></InputNumber>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </div>
+</EditForm>
+
+
+
+
+
+
+@code {
+    private FormData formData = new FormData();
+
+    private class FormData
+    {
+        public double PrimeiroValor { get; set; }
+        public double SegundoValor { get; set; }
+        public double Resultado { get; set; }
+    }
+}

@@ -6,6 +6,10 @@
 <h1>Contador</h1>
 
 <p role="status">Contador: @currentCount</p>
+@if (currentCount >= 10)
+{
+    currentCount += 9;
+}
 
 <button class="btn btn-primary" @onclick="IncrementCount">Clique aqui</button>
 
@@ -15,5 +19,8 @@
     private void IncrementCount()
     {
         currentCount++;
+
+
     }
+
 }
